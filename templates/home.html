@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+/* ===== Container ===== */
+.container.home-page {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Headings ===== */
+.container.home-page h1 {
+    color: #2575fc;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.container.home-page h3 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* ===== Lists ===== */
+.container.home-page ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.container.home-page ul li {
+    background: #e0e0e0;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* ===== Contact Info ===== */
+.container.home-page p {
+    font-size: 16px;
+    color: #555;
+}
+</style>
+
+<div class="container home-page">
+    <h1>Library Management System</h1>
+
+    <h3>📞 Contact</h3>
+    <p>Email: library@email.com | Phone: 1234567890</p>
+
+    <h3>📚 Genres</h3>
+    <ul>{% for g in genres %}<li>{{ g.name }}</li>{% endfor %}</ul>
+
+    <h3>✍ Authors</h3>
+    <ul>{% for a in authors %}<li>{{ a.name }}</li>{% endfor %}</ul>
+
+    <h3>🌍 Languages</h3>
+    <ul>{% for l in languages %}<li>{{ l.name }}</li>{% endfor %}</ul>
+</div>
+
+{% endblock %}

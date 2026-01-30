@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library System</title>
+    <style>
+    /* ===== Body with Background Image ===== */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+
+        background-image: url("{% static 'images/bg.jpg' %}");
+        background-size: cover;        /* cover full screen */
+        background-position: center;   /* center image */
+        background-repeat: no-repeat;  /* no tiling */
+        background-attachment: fixed;  /* stays while scrolling */
+    }
+
+    /* ===== Navbar ===== */
+    nav {
+        background: rgba(0, 0, 0, 0.7); /* semi-transparent */
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    nav a, nav form button {
+        color: white;
+        font-weight: bold;
+        margin-right: 20px;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    nav a:hover, nav form button:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ===== Container ===== */
+    .container {
+        margin: 30px auto;
+        max-width: 600px;
+        
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    /* Make logout button look exactly like nav links */
+    nav form {
+        margin: 0;
+    }
+
+    nav a,
+    nav .nav-btn {
+        color: white;
+        font-weight: bold;
+        margin-right: 20px;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        font-size: 16px;
+        font-family: inherit;
+
+        transition: background 0.3s;
+    }
+
+    nav a:hover,
+    nav .nav-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    {% if user.is_authenticated %}
+        <a href="/add-genre/">Add Genre</a>
+        <a href="/add-author/">Add Author</a>
+        <a href="/add-language/">Add Language</a>
+        <a href="/add-book/">Add Book</a>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="nav-btn">Logout</button>
+        </form>
+    {% else %}
+        <a href="/login/">Login</a>
+    {% endif %}
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

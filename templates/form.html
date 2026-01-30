@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+/* ===== Container ===== */
+.container.form-page {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Heading ===== */
+.container.form-page h2 {
+    text-align: center;
+    color: #2575fc;
+    margin-bottom: 20px;
+}
+
+/* ===== Form Elements ===== */
+.container.form-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.container.form-page input,
+.container.form-page select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ===== Submit Button ===== */
+.container.form-page button {
+    width: 150px;
+    margin: 10px auto 0 auto;
+    background-color: #2575fc;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.container.form-page button:hover {
+    background-color: #6a11cb;
+}
+</style>
+
+<div class="container form-page">
+    <h2>{{ title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+{% endblock %}
+

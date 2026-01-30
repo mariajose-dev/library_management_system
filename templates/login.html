@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+/* ===== Container ===== */
+.container.login-page {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Heading ===== */
+.container.login-page h2 {
+    text-align: center;
+    color: #2575fc;
+    margin-bottom: 20px;
+}
+
+/* ===== Form Inputs ===== */
+.container.login-page input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* ===== Submit Button ===== */
+.container.login-page button {
+    width: 100%;
+    background-color: #2575fc;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.container.login-page button:hover {
+    background-color: #6a11cb;
+}
+</style>
+
+<div class="container login-page">
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+{% endblock %}
+

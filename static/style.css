@@ -1,0 +1,131 @@
+/* ================= Body & Container ================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+}
+
+.container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ================= Navbar ================= */
+nav {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ================= Headings ================= */
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ================= Home Page ================= */
+.home-page h1 {
+    color: #2575fc;
+}
+
+.home-page ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.home-page ul li {
+    background: #e0e0e0;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* ================= Form Pages (Add Book / Author / Genre / Language) ================= */
+.form-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-page input,
+.form-page select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-page button {
+    background-color: #2575fc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.form-page button:hover {
+    background-color: #6a11cb;
+}
+
+/* ================= Login Page ================= */
+.login-page form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #e0f0ff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-page h2 {
+    text-align: center;
+    color: #2575fc;
+    margin-bottom: 20px;
+}
+
+.login-page input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-page button {
+    background-color: #2575fc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-page button:hover {
+    background-color: #6a11cb;
+}
